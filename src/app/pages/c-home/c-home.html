@@ -29,7 +29,7 @@
         [showIndicators]="!false" [responsiveOptions]="carouselResponsiveOptions" [circular]="true" >
         <ng-template let-product #item>
             <div
-                class="group w-[300px] h-[320px] max-sm:w-[140px] max-md:w-[260px] max-lg:w-[220px] max-sm:h-[160px] max-md:h-[260px] max-lg:h-[260px] flex flex-col justify-center items-center overflow-hidden bg-white rounded-sm p-4 max-lg:mr-4 lg:ml-4 ">
+                class="group w-[300px] h-[320px] max-sm:w-[240px] max-md:w-[260px] max-lg:w-[220px] max-sm:h-[260px] max-md:h-[260px] max-lg:h-[260px] flex flex-col justify-center items-center overflow-hidden bg-white rounded-sm p-4 max-lg:mr-4 lg:ml-4 ">
                 <div
                     class="group-hover:lg:scale-95 cursor-pointer h-full w-full bg-neutral-100 flex flex-col justify-center items-center overflow-hidden transition-transform duration-200">
                     <!-- <div class="w-full ">
@@ -60,14 +60,14 @@
                 [showNavigators]="true" [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions"
                 [circular]="true">
                 <ng-template let-product #item>
-                    <category-card className="max-sm:ml-2" [items]="[1,2,3]" />
+                    <category-card className="max-sm:mx-2" [items]="[1,2,3]" />
                 </ng-template>
             </p-carousel>
             <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3"
                 [showNavigators]="true" [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions"
                 [circular]="true">
                 <ng-template let-product #item>
-                    <category-card className="max-sm:ml-2" [items]="[1,2,3]" />
+                    <category-card className="max-sm:mx-2" [items]="[1,2,3]" />
                 </ng-template>
             </p-carousel>
         </div>

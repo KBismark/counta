@@ -1,7 +1,7 @@
 <header class="flex justify-between items-center py-3 px-4 xl:px-8 bg-primary-200/80 backdrop-blur-md">
     <div class="space-x-10 flex items-center">
         <div typo="h3" class="">Logo</div> 
-        <div class="flex justify-between items-center gap-0">
+        <div class="flex justify-between items-center gap-0 max-md:hidden">
             <div>
                 <button typo="button" pButton rounded text (click)="op.toggle($event)">
                     <span typo="button-text" pButtonLabel>Explore</span>
@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    <div class="flex justify-between items-center gap-4">
+    <div class="flex justify-between items-center gap-4 max-md:hidden">
         <div>
             <button typo="button" pButton rounded outlined >
                 Sign up
@@ -35,6 +35,21 @@
             <button typo="button" pButton rounded >
                 Log in
             </button>
+        </div>
+    </div>
+    <div class="hidden justify-between items-center gap-0 max-md:flex">
+        <button typo="button" pButton rounded text>
+            <span typo="button-text" pButtonLabel>My cart</span>
+            <i class="pi pi-shopping-cart mt-1" style="font-size: 20px;" pButtonIcon></i>
+        </button>
+        <div>
+            <button typo="button" pButton text (click)="menu.toggle($event)">
+                <span typo="button-text" class="sr-only" pButtonLabel>Navigation menu button</span>
+                <i class="pi pi-bars mt-1" style="font-size: 20px;" pButtonIcon></i>
+            </button>
+            <p-popover #menu>
+                <div class="flex flex-col gap-4 w-[20rem] h-[30rem]"></div>
+            </p-popover>
         </div>
     </div>
 </header>
