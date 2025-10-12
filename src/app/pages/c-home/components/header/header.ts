@@ -1,14 +1,14 @@
 import { TypographyDirective } from '@/core/typography';
-import { Component } from '@angular/core';
-import { Button, ButtonDirective, ButtonIcon, ButtonLabel } from "primeng/button";
-import { SplitButton } from "primeng/splitbutton";
+import { Component, signal } from '@angular/core';
+import { ButtonDirective, ButtonIcon, ButtonLabel } from "primeng/button";
 import { Popover } from "primeng/popover";
 
 @Component({
   selector: 'app-header',
-  imports: [TypographyDirective, ButtonDirective, SplitButton, Popover, ButtonIcon, ButtonLabel],
+  imports: [TypographyDirective, ButtonDirective, Popover, ButtonIcon, ButtonLabel],
   templateUrl: './header.html',
 })
 export class Header {
-  expolorerItems = [{ label: 'Update', icon: 'pi pi-refresh' }, { label: 'Delete', icon: 'pi pi-times' }, { label: 'Angular.io', icon: 'pi pi-info', url: 'http://angular.io' }, { separator: true }, { label: 'Setup', icon: 'pi pi-cog' }];
+  protected expolorerItems = [{ label: 'Update', icon: 'pi pi-refresh' }, { label: 'Delete', icon: 'pi pi-times' }, { label: 'Angular.io', icon: 'pi pi-info', url: 'http://angular.io' }, { separator: true }, { label: 'Setup', icon: 'pi pi-cog' }];
+  protected isAuthenticated = signal(true);
 }

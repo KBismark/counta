@@ -26,7 +26,7 @@
 <screen-container>
 
     <p-carousel class="-mt-16" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
-        [showIndicators]="!false" [responsiveOptions]="carouselResponsiveOptions" [circular]="true" >
+        [showIndicators]="!false" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
         <ng-template let-product #item>
             <div
                 class="group w-[300px] h-[320px] max-sm:w-[240px] max-md:w-[260px] max-lg:w-[220px] max-sm:h-[260px] max-md:h-[260px] max-lg:h-[260px] flex flex-col justify-center items-center overflow-hidden bg-white rounded-sm p-4 max-lg:mr-4 lg:ml-4 ">
@@ -45,6 +45,27 @@
     <inverted-corner-section class="block" title="Explore Local Foods" colorClass="bg-emerald-300"
         invertedCorner="bottom-right" />
 
+    <section class="w-full space-y-4 flex flex-col pt-8 bg-white">
+        <header class="mx-4 flex  justify-between items-center gap-3 flex-wrap">
+            <h2 style="margin: 0; padding: 0;" typo="h1">Buy At Your Own Price, Place Your Bid</h2>
+            <div class="flex justify-center items-center md:mt-3">
+                <button typo="button" pButton rounded>
+                    <span typo="button-text" pButtonLabel>Explore</span>
+                    <i class="pi pi-arrow-right mt-1" style="font-size: 10px;" pButtonIcon></i>
+                </button>
+            </div>
+        </header>
+        <div class="md:px-2 pt-4 pb-2  space-y-4">
+            <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
+                [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
+                <ng-template let-product #item>
+                    <category-card className="max-sm:mx-2 block border border-neutral-100 p-0!" [items]="[1]" />
+                </ng-template>
+            </p-carousel>
+        </div>
+
+    </section>
+
     <section class="w-full space-y-4 flex flex-col pt-8 bg-rose-300">
         <header class="mx-4 flex  justify-between items-center gap-3 flex-wrap">
             <h2 style="margin: 0; padding: 0;" typo="h1">Touch Product Before Purchase</h2>
@@ -56,22 +77,41 @@
             </div>
         </header>
         <div class="bg-rose-500 md:px-2 pt-4 pb-2  space-y-4">
-            <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3"
-                [showNavigators]="true" [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions"
-                [circular]="true">
+            <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
+                [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
                 <ng-template let-product #item>
                     <category-card className="max-sm:mx-2" [items]="[1,2,3]" />
                 </ng-template>
             </p-carousel>
-            <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3"
-                [showNavigators]="true" [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions"
-                [circular]="true">
+            <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
+                [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
                 <ng-template let-product #item>
                     <category-card className="max-sm:mx-2" [items]="[1,2,3]" />
                 </ng-template>
             </p-carousel>
         </div>
-        
+
+    </section>
+
+    <section class="w-full space-y-4 flex flex-col pt-8 bg-white">
+        <header class="mx-4 flex  justify-between items-center gap-3 flex-wrap">
+            <h2 style="margin: 0; padding: 0;" typo="h1">Buy At Your Own Price, Place Your Bid</h2>
+            <div class="flex justify-center items-center md:mt-3">
+                <button typo="button" pButton rounded>
+                    <span typo="button-text" pButtonLabel>Explore</span>
+                    <i class="pi pi-arrow-right mt-1" style="font-size: 10px;" pButtonIcon></i>
+                </button>
+            </div>
+        </header>
+        <div class="md:px-2 pt-4 pb-2  space-y-4">
+            <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
+                [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
+                <ng-template let-product #item>
+                    <category-card className="max-sm:mx-2 block border border-neutral-100 p-0!" [items]="[1]" />
+                </ng-template>
+            </p-carousel>
+        </div>
+
     </section>
 
 
