@@ -26,10 +26,10 @@
 <screen-container>
 
     <p-carousel class="-mt-16" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
-        [showIndicators]="!false" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
+        [showIndicators]="!false" [responsiveOptions]="carouselResponsiveOptions" [circular]="true" >
         <ng-template let-product #item>
             <div
-                class="group w-[300px] h-[320px] max-md:w-[260px] max-lg:w-[280px] max-md:h-[260px] max-lg:h-[300px] flex flex-col justify-center items-center overflow-hidden bg-white rounded-sm p-4 max-lg:mr-4 lg:ml-4 ">
+                class="group w-[300px] h-[320px] max-sm:w-[140px] max-md:w-[260px] max-lg:w-[220px] max-sm:h-[160px] max-md:h-[260px] max-lg:h-[260px] flex flex-col justify-center items-center overflow-hidden bg-white rounded-sm p-4 max-lg:mr-4 lg:ml-4 ">
                 <div
                     class="group-hover:lg:scale-95 cursor-pointer h-full w-full bg-neutral-100 flex flex-col justify-center items-center overflow-hidden transition-transform duration-200">
                     <!-- <div class="w-full ">
@@ -45,8 +45,8 @@
     <inverted-corner-section class="block" title="Explore Local Foods" colorClass="bg-emerald-300"
         invertedCorner="bottom-right" />
 
-    <section class="w-full space-y-4 flex flex-col pt-8 pb-4 px-4 bg-rose-300">
-        <header class="ml-4 flex  justify-between items-center gap-3 flex-wrap">
+    <section class="w-full space-y-4 flex flex-col pt-8 bg-rose-300">
+        <header class="mx-4 flex  justify-between items-center gap-3 flex-wrap">
             <h2 style="margin: 0; padding: 0;" typo="h1">Touch Product Before Purchase</h2>
             <div class="flex justify-center items-center md:mt-3">
                 <button typo="button" pButton rounded>

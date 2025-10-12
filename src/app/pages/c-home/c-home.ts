@@ -14,6 +14,10 @@ import { InvertedCornerSection } from "./components/inverted-corner-section/inve
   styleUrl: './c-home.css'
 })
 export class CHome {
+  constructor() {
+    // Override the onTouchMove prototype to disable swipe
+    Carousel.prototype.onTouchMove = (): void => undefined;
+  }
   heroCarouselItems = [
     {
       image: 'https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg',
@@ -75,7 +79,6 @@ export class CHome {
         breakpoint: '560px',
         numVisible: 2,
         numScroll: 1,
-        showIndicators:false
     }
 ];
 }
