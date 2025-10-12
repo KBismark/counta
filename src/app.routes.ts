@@ -4,6 +4,7 @@ import { Dashboard } from './app/pages/dashboard/dashboard';
 import { Documentation } from './app/pages/documentation/documentation';
 import { Landing } from './app/pages/landing/landing';
 import { Notfound } from './app/pages/notfound/notfound';
+import { CHome } from '@/pages/c-home/c-home';
 
 export const appRoutes: Routes = [
     {
@@ -17,6 +18,7 @@ export const appRoutes: Routes = [
         ]
     },
     { path: 'landing', component: Landing },
+    { path: 'home', component: CHome },
     { path: 'notfound', component: Notfound },
     { path: 'auth', loadChildren: () => import('./app/pages/auth/auth.routes') },
     { path: '**', redirectTo: '/notfound' }

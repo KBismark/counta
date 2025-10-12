@@ -1,0 +1,40 @@
+<header class="flex justify-between items-center py-3 px-4 xl:px-8 bg-primary-200/80 backdrop-blur-md">
+    <div class="space-x-10 flex items-center">
+        <div typo="h3" class="">Logo</div> 
+        <div class="flex justify-between items-center gap-0">
+            <div>
+                <button typo="button" pButton rounded text (click)="op.toggle($event)">
+                    <span typo="button-text" pButtonLabel>Explore</span>
+                    <i class="pi pi-chevron-down mt-1" style="font-size: 10px;" pButtonIcon></i>
+                </button>
+                <!-- Explore Option Navigation -->
+                <p-popover #op>
+                    <div class="flex flex-col gap-4 w-[25rem] h-[30rem]"></div>
+                </p-popover>
+
+            </div>
+            <div>
+                <button typo="button" pButton rounded text >
+                    How it works
+                </button>
+            </div>
+            <div>
+                <button typo="button" pButton rounded text >
+                    Partner
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-between items-center gap-4">
+        <div>
+            <button typo="button" pButton rounded outlined >
+                Sign up
+            </button>
+        </div>
+        <div>
+            <button typo="button" pButton rounded >
+                Log in
+            </button>
+        </div>
+    </div>
+</header>
