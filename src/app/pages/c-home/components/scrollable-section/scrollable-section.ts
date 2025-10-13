@@ -1,24 +1,14 @@
 import { Component } from '@angular/core';
-import { Header } from './components/header/header';
-import { ScreenContainer } from "@/layout/component/container.layout";
 import { Carousel } from "primeng/carousel";
-import { CategoryCard } from "./components/category-card/category-card";
-import { TypographyDirective } from "@/core/typography";
-import { ButtonDirective } from "primeng/button";
-import { InvertedCornerSection } from "./components/inverted-corner-section/inverted-corner-section";
-import { mockedHomeSection, sneakersSection } from './data/section.mocked';
+import { CategoryCard } from "../category-card/category-card";
 
 @Component({
-  selector: 'app-c-home',
-  imports: [Header, ScreenContainer, Carousel, CategoryCard, TypographyDirective, ButtonDirective, InvertedCornerSection],
-  templateUrl: './c-home.html',
-  styleUrl: './c-home.css'
+  selector: 'app-scrollable-section',
+  imports: [Carousel, CategoryCard],
+  templateUrl: './scrollable-section.html',
+  styleUrl: './scrollable-section.scss'
 })
-export class CHome {
-  constructor() {
-    // Override the onTouchMove prototype to disable swipe
-    Carousel.prototype.onTouchMove = (): void => undefined;
-  }
+export class ScrollableSection {
   heroCarouselItems = [
     {
       image: 'https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg',
@@ -82,6 +72,4 @@ export class CHome {
         numScroll: 1,
     }
 ];
-
-  public homeSection = mockedHomeSection;
 }

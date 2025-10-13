@@ -3,6 +3,7 @@ import { CategoryCard } from "../category-card/category-card";
 import { CommonModule } from '@angular/common';
 import { ButtonDirective} from "primeng/button";
 import { TypographyDirective } from "@/core/typography";
+import { HomeSectionType } from '@/interfaces/sections';
 @Component({
   selector: 'inverted-corner-section',
   imports: [CategoryCard, CommonModule, ButtonDirective, TypographyDirective],
@@ -13,6 +14,7 @@ export class InvertedCornerSection{
   public colorClass = input<string>('');
   public title = input<string>('');
   public invertedCorner = input<'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'>('top-right');
+  public data = input.required<HomeSectionType>()
 
   protected classNames = computed(() => {
     switch (this.invertedCorner()) {

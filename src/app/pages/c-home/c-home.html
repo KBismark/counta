@@ -41,9 +41,9 @@
     </p-carousel>
 
     <inverted-corner-section class="block" title="Explore Electronics" colorClass="bg-amber-300"
-        invertedCorner="top-right" />
+        invertedCorner="top-right" [data]="homeSection" />
     <inverted-corner-section class="block" title="Explore Local Foods" colorClass="bg-emerald-300"
-        invertedCorner="bottom-right" />
+        invertedCorner="bottom-left" [data]="homeSection" />
 
     <section class="w-full space-y-4 flex flex-col pt-8 bg-white">
         <header class="mx-4 flex  justify-between items-center gap-3 flex-wrap">
@@ -59,7 +59,7 @@
             <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
                 [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
                 <ng-template let-product #item>
-                    <category-card className="max-sm:mx-2 block border border-neutral-100 p-0!" [items]="[1]" />
+                    <category-card [data]="homeSection.items[1]" className="max-sm:mx-2 block border border-neutral-100 p-0!" />
                 </ng-template>
             </p-carousel>
         </div>
@@ -80,13 +80,13 @@
             <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
                 [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
                 <ng-template let-product #item>
-                    <category-card className="max-sm:mx-2" [items]="[1,2,3]" />
+                    <category-card [data]="homeSection.items[0]" className="max-sm:mx-2" />
                 </ng-template>
             </p-carousel>
             <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
                 [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
                 <ng-template let-product #item>
-                    <category-card className="max-sm:mx-2" [items]="[1,2,3]" />
+                    <category-card [data]="homeSection.items[1]" className="max-sm:mx-2" />
                 </ng-template>
             </p-carousel>
         </div>
@@ -107,7 +107,7 @@
             <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
                 [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
                 <ng-template let-product #item>
-                    <category-card className="max-sm:mx-2 block border border-neutral-100 p-0!" [items]="[1]" />
+                    <category-card [data]="homeSection.items[0]" className="max-sm:mx-2 block border border-neutral-100 p-0!" />
                 </ng-template>
             </p-carousel>
         </div>

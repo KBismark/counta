@@ -1,3 +1,4 @@
+import { CategoryCardType } from '@/interfaces/cards';
 import { CommonModule } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
 
@@ -9,9 +10,12 @@ import { Component, computed, input } from '@angular/core';
 })
 export class CategoryCard {
     public className = input<string>('')
-    public items = input<any[]>([]);
+    public data = input.required<CategoryCardType>();
+    protected items = computed(()=>this.data().items.slice(0,5));
     protected sectionGridStyle = computed(() => {
-      const length = this.items().length;
+      console.log(this.data());
+      
+      const length = this.data().items.length;
       if (length === 1) {
         return {
           container: 'grid-cols-1',

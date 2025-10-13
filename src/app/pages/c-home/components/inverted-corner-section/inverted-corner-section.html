@@ -1,6 +1,10 @@
-<section class="grid grid-cols-3 max-xl:grid-cols-1 gap-4 max-xl:flex max-xl:flex-col max-xl:items-center">
+<section class="grid grid-cols-3 max-xl:grid-cols-1 gap-4 max-xl:flex {{['top-right','bottom-right'].includes(invertedCorner())?'max-xl:flex-col':'max-xl:flex-col-reverse'}} max-xl:items-center">
     <!-- <div class="col-span-1"> -->
-        <div class="space-y-6 flex flex-col max-xl:w-full px-4 {{colorClass()}} {{classNames()}}" >
+        
+    <!-- </div> -->
+
+    @if (['top-right','bottom-right'].includes(invertedCorner())) {
+        <div class="group space-y-6 flex flex-col max-xl:w-full px-4 {{colorClass()}} {{classNames()}}" >
             <header class="ml-4 flex  justify-between items-center gap-3 flex-wrap">
                 <h2 style="margin: 0; padding: 0;" typo="h1">{{title()}}</h2>
                 <div class="flex justify-center items-center md:mt-3">
@@ -11,14 +15,34 @@
                 </div>
             </header>
             <div
-                class="shape inverted-{{invertedCorner()}}-radius-shape bg-white w-full h-full max-w-lg max-xl:max-w-full max-xl:max-h-[300px] max-h-[500px]">
+                class="shape inverted-{{invertedCorner()}}-radius-shape bg-white w-full h-full max-w-lg max-xl:max-w-full max-xl:max-h-[300px] max-h-[500px] overflow-hidden">
+                <img [src]="data().profileImage?.[0]" [alt]="data().name+' section'" class="size-full object-cover block group-hover:lg:scale-105 transition-transform duration-200 " />
             </div>
         </div>
-    <!-- </div> -->
+    }
+
     <div class="col-span-2 grid grid-cols-3 gap-4 max-md:gap-1 max-md:grid-cols-2 max-xl:w-full">
-        @for (product of [1,2,3,4,5,6]; track $index) {
-        <category-card [items]="[1,2,3]" />
+        @for (item of data().items; track item.groupId) {
+            <category-card [data]="item" />
         }
     </div>
+
+    @if (!['top-right','bottom-right'].includes(invertedCorner())) {
+        <div class="group space-y-6 flex flex-col max-xl:w-full px-4 {{colorClass()}} {{classNames()}}" >
+            <header class="ml-4 flex  justify-between items-center gap-3 flex-wrap">
+                <h2 style="margin: 0; padding: 0;" typo="h1">{{title()}}</h2>
+                <div class="flex justify-center items-center md:mt-3">
+                    <button typo="button" pButton rounded >
+                        <span typo="button-text" pButtonLabel>Explore</span>
+                        <i class="pi pi-arrow-right mt-1" style="font-size: 10px;" pButtonIcon></i>
+                    </button>
+                </div>
+            </header>
+            <div
+                class="shape inverted-{{invertedCorner()}}-radius-shape bg-white w-full h-full max-w-lg max-xl:max-w-full max-xl:max-h-[300px] max-h-[500px] overflow-hidden">
+                <img [src]="data().profileImage?.[0]" [alt]="data().name+' section'" class="size-full object-cover block group-hover:lg:scale-105 transition-transform duration-200 " />
+            </div>
+        </div>
+    }
 
 </section>
