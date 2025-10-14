@@ -1,10 +1,11 @@
 import { CategoryCardType } from '@/interfaces/cards';
 import { CommonModule } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
+import { TypographyDirective } from "@/core/typography";
 
 @Component({
   selector: 'category-card',
-  imports: [CommonModule],
+  imports: [CommonModule, TypographyDirective],
   templateUrl: './category-card.html',
   styleUrl: './category-card.scss'
 })

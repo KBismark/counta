@@ -17,6 +17,13 @@ export class TypographyDirective implements OnChanges, OnInit {
     'h5': 'text-lg font-bold leading-tight md:text-xl',
     'h6': 'text-base font-bold leading-tight md:text-lg',
 
+    'h1!': 'text-4xl! font-bold! leading-tight! md:text-5xl!',
+    'h2!': 'text-3xl! font-bold! leading-tight! md:text-4xl!',
+    'h3!': 'text-2xl! font-bold! leading-tight! md:text-3xl!',
+    'h4!': 'text-xl! font-bold! leading-tight! md:text-2xl!',
+    'h5!': 'text-lg! font-bold! leading-tight! md:text-xl!',
+    'h6!': 'text-base! font-bold! leading-tight! md:text-lg!',
+
     // Body text
     'body': 'text-base leading-relaxed',
     'body-lg': 'text-lg leading-relaxed md:text-xl',

@@ -20,7 +20,7 @@
     </p-carousel>
 </div>
 
-<p-carousel class="-mt-16 hidden! md:block! patch-carousel-margin" [value]="homeSection.items" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
+<p-carousel class="-mt-16 hidden! md:block! patch-carousel-margin mb-8" [value]="homeSection.items" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
     [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
     <ng-template let-group #item>
         <div
@@ -50,7 +50,7 @@
 </p-carousel>
 
 
-    <inverted-corner-section class="block" _title="Explore Electronics" colorClass="bg-amber-300"
+    <inverted-corner-section class="block mb-20" _title="Explore Electronics" colorClass="bg-amber-300"
         invertedCorner="top-right" [data]="homeSection" />
     <inverted-corner-section class="block" _title="Explore Local Foods" colorClass="bg-emerald-300"
         invertedCorner="bottom-left" [data]="homeSection" />
@@ -58,6 +58,9 @@
     <scrollable-section class="block" [data]="homeSection" _title="Touch Product Before Purchase" [numberOfSections]="2"
         className="bg-rose-300!" colorClass="bg-rose-500" />
     <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
+
+    <scrollable-section [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
+    <scrollable-section [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
 
 
 </screen-container>
