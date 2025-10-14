@@ -2,7 +2,7 @@
    
     @if (['top-right','bottom-right'].includes(invertedCorner())) {
         <div class="group space-y-6 flex flex-col max-xl:w-full px-4 {{colorClass()}} {{classNames()}}" >
-            <header class="ml-4 flex  justify-between items-center gap-3 flex-wrap">
+            <header class="flex  justify-between items-center gap-3 flex-wrap">
                 <h2 style="margin: 0; padding: 0;" typo="h1">{{_title()}}</h2>
                 <div class="flex justify-center items-center md:mt-3">
                     <button typo="button" pButton rounded >
@@ -18,7 +18,7 @@
         </div>
     }
 
-    <div class="col-span-2 grid grid-cols-3 gap-4 max-md:gap-1 max-md:grid-cols-2 max-xl:w-full">
+    <div class="col-span-2 grid grid-cols-3 gap-2 max-md:gap-2 max-md:space-y-1.5 max-md:grid-cols-2 max-xl:w-full">
         @for (item of items(); track item.groupId) {
             <category-card [data]="item" />
         }
@@ -26,7 +26,7 @@
 
     @if (!['top-right','bottom-right'].includes(invertedCorner())) {
         <div class="group space-y-6 flex flex-col max-xl:w-full px-4 {{colorClass()}} {{classNames()}}" >
-            <header class="ml-4 flex  justify-between items-center gap-3 flex-wrap">
+            <header class="flex  justify-between items-center gap-3 flex-wrap">
                 <h2 style="margin: 0; padding: 0;" typo="h1">{{_title()}}</h2>
                 <div class="flex justify-center items-center md:mt-3">
                     <button typo="button" pButton rounded >

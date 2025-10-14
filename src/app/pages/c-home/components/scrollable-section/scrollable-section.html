@@ -15,7 +15,7 @@
             <p-carousel [value]="section" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
                 [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
                 <ng-template let-group #item>
-                    <category-card [data]="group" className="max-sm:mx-2 {{colorClass()? 'p-0.5!' : 'block border border-neutral-200 p-0!'}}" />
+                    <category-card [data]="group" className="max-sm:mx-2 lg:h-[340px]! {{colorClass()? 'p-0.5!' : 'block border border-neutral-200 p-1!'}}" />
                 </ng-template>
             </p-carousel>
         }

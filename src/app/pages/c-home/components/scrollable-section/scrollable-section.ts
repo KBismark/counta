@@ -32,7 +32,7 @@ export class ScrollableSection {
 
   carouselResponsiveOptions: any[] = [
     {
-        breakpoint: '1024px',
+        breakpoint: '1120px',
         numVisible: 3,
         numScroll: 2
     },

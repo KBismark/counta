@@ -1,5 +1,5 @@
 <div
-    class="group max-w-[300px] max-md:h-[200px] max-lg:h-[280px] h-[320px] flex flex-col justify-center items-center overflow-hidden bg-white rounded-sm p-1.5 max-md:p-2 {{className()}} ">
+    class="group max-w-[300px] lg:max-w-full xl:max-w-[300px] max-md:h-[200px] max-lg:h-[280px] lg:h-[360px] xl:h-[320px] flex flex-col justify-center items-center overflow-hidden bg-white rounded-sm p-1.5 max-md:p-0 {{className()}} ">
     <div [ngClass]="sectionGridStyle().container" class="cursor-pointer h-full w-full grid gap-2">
         @for (item of items(); track item.groupId) {
             <div
