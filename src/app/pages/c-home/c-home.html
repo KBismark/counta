@@ -9,7 +9,7 @@
                 <div class="{{product.index!==0?'max-sm:hidden':''}}"></div>
                 <div class="h-full {{product.index!==0?'max-sm:w-full':''}} flex flex-col justify-center items-center overflow-hidden">
                     <div
-                        class="shape {{product.class}} w-[350px] lg:w-[500px] xl:w-[600px] h-[360px] bg-amber-900">
+                        class="shape {{product.class}} max-xs:w-[300px] max-xs:ml-2.5 w-[350px] lg:w-[500px] xl:w-[600px] h-[360px] bg-amber-900">
 
                     </div>
                 </div>
@@ -18,7 +18,7 @@
     </p-carousel>
 </div>
 
-<p-carousel class="-mt-16 hidden! md:block! patch-carousel-margin mb-8" [value]="homeSection.items" [numVisible]="5" [numScroll]="3" [showNavigators]="true"
+<p-carousel class="-mt-10 hidden! md:block! patch-carousel-margin mb-8" [value]="homeSection.items" [numVisible]="5" [numScroll]="3" [showNavigators]="true"
     [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
     <ng-template let-group #item>
         <div
