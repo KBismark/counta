@@ -1,23 +1,31 @@
 <section class="w-full space-y-4 flex flex-col pt-8 bg-white {{className()}}">
     @if (_title()) {
-        <header class="mx-4 lg:mx-8 flex  justify-between items-center gap-3 flex-wrap">
-            <h2 style="margin: 0; padding: 0;" typo="h1">{{_title()}}</h2>
-            <div class="flex justify-center items-center md:mt-3">
-                <button typo="button" pButton rounded>
-                    <span typo="button-text" pButtonLabel>Explore</span>
-                    <i class="pi pi-arrow-right mt-1" style="font-size: 10px;" pButtonIcon></i>
-                </button>
-            </div>
-        </header>
+    <header class="mx-4 lg:mx-8 flex  justify-between items-center gap-3 flex-wrap">
+        <h2 style="margin: 0; padding: 0;" typo="h1">{{_title()}}</h2>
+        <div class="flex justify-center items-center md:mt-3">
+            <button typo="button" pButton rounded>
+                <span typo="button-text" pButtonLabel>Explore</span>
+                <i class="pi pi-arrow-right mt-1" style="font-size: 10px;" pButtonIcon></i>
+            </button>
+        </div>
+    </header>
     }
     <div class="{{colorClass()}} md:px-2 pt-4 pb-2  space-y-4">
         @for (section of sectionedItems(); track $index) {
-            <p-carousel [value]="section" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
-                [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
-                <ng-template let-group #item>
-                    <category-card [data]="group" className="max-sm:mx-2 lg:h-[340px]! {{colorClass()? 'p-0.5!' : 'block border border-neutral-200 p-1!'}}" />
-                </ng-template>
-            </p-carousel>
+        <p-carousel [value]="section" [numVisible]="4" [numScroll]="3" [showNavigators]="true" [showIndicators]="true"
+            [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
+            <ng-template let-group #item>
+                <div>
+                    <category-card [data]="group"
+                        className="max-sm:mx-2 lg:h-[340px]! {{colorClass()? 'p-0.5!' : 'block border border-neutral-200 p-1!'}}" />
+                    @if (!colorClass()) {
+                        <div class="mx-1 mt-1 mb-2">
+                            <a href="#" typo="md" class="text-blue-400 ax-md:text-sm!">See more in {{data().name}}</a>
+                        </div>
+                    }
+                </div>
+            </ng-template>
+        </p-carousel>
         }
     </div>
 </section>

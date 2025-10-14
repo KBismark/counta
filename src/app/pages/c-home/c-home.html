@@ -2,16 +2,14 @@
 
 <div>
     <p-carousel [value]="heroCarouselItems.slice(0,3)" [numVisible]="1" [numScroll]="1" [showNavigators]="false"
-        [showIndicators]="!true" [autoplayInterval]="2000" [circular]="true">
+        [showIndicators]="!true" [autoplayInterval]="3000" [circular]="true">
         <ng-template let-product #item>
             <div style="background-color: {{product.color}}"
                 class="w-full h-[420px] flex justify-between flex-wrap overflow-hidden">
-                <div>
-
-                </div>
-                <div class="h-full flex flex-col justify-center items-center overflow-hidden">
+                <div class="{{product.index!==0?'max-sm:hidden':''}}"></div>
+                <div class="h-full {{product.index!==0?'max-sm:w-full':''}} flex flex-col justify-center items-center overflow-hidden">
                     <div
-                        class="shape {{product.class}} w-full max-md:max-w-[500px] md:w-[600px] h-[360px] bg-amber-900">
+                        class="shape {{product.class}} w-[350px] lg:w-[500px] xl:w-[600px] h-[360px] bg-amber-900">
 
                     </div>
                 </div>
@@ -20,7 +18,7 @@
     </p-carousel>
 </div>
 
-<p-carousel class="-mt-16 hidden! md:block! patch-carousel-margin mb-8" [value]="homeSection.items" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
+<p-carousel class="-mt-16 hidden! md:block! patch-carousel-margin mb-8" [value]="homeSection.items" [numVisible]="5" [numScroll]="3" [showNavigators]="true"
     [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
     <ng-template let-group #item>
         <div
@@ -59,8 +57,13 @@
         className="bg-rose-300!" colorClass="bg-rose-500" />
     <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
 
-    <scrollable-section [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
-    <scrollable-section [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
+    <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" [numberOfSections]="2" />
+    <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
 
 
 </screen-container>
+
+
+<footer class="bg-primary-200/80 backdrop-blur-md h-[400px]">
+
+</footer>

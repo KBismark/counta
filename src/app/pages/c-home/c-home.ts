@@ -41,27 +41,6 @@ export class CHome {
       description: 'Hero Carousel Item 3 Description',
       color: 'red',
       class: 'rounded-lg mx-4',
-    },
-    {
-      image: 'https://primefaces.org/cdn/primeng/images/galleria/galleria4.jpg',
-      title: 'Hero Carousel Item 4',
-      description: 'Hero Carousel Item 4 Description',
-      color: 'purple',
-      class: 'squircle-shape mx-4',
-    },
-    {
-      image: 'https://primefaces.org/cdn/primeng/images/galleria/galleria5.jpg',
-      title: 'Hero Carousel Item 5',
-      description: 'Hero Carousel Item 5 Description',
-      color: 'orange',
-      class: 'inverted-radius-shape mx-4',
-    },
-    {
-      image: 'https://primefaces.org/cdn/primeng/images/galleria/galleria6.jpg',
-      title: 'Hero Carousel Item 6',
-      description: 'Hero Carousel Item 6 Description',
-      color: 'pink',
-      class: 'trapezoid-down-shape h-[calc(100%-80px)] mb-16 -mt-6',
     }
     
   ].map((item,index) => ({...item, index}));
