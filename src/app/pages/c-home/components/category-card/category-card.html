@@ -7,9 +7,9 @@
                 href="#"
                 [attr.aria-label]="item.name"
                 [ngClass]="sectionGridStyle().item[$index]||sectionGridStyle().item[sectionGridStyle().item.length-1]"
-                class="hover:lg:scale-105 bg-neutral-100 flex flex-col justify-center items-center overflow-hidden transition-transform duration-200 relative no-underline">
+                class="hover:lg:scale-105 bg-neutral-100 flex flex-col justify-center items-center overflow-hidden transition-transform duration-200 relative no-underline max-md:rounded-sm">
                 <img [src]="item.profileImage?.[0]" [alt]="item.name" class="size-full object-cover block " />
-                <div typo="sm" class="absolute pb-0.5 lg:pb-1 bottom-0 left-0 right-0 bg-white/70 backdrop-blur-xl text-center text-nowrap truncate">{{item.name}}</div>
+                <div typo="sm" class="absolute pb-0.5 lg:pb-1 bottom-0 left-0 right-0 bg-white/70 backdrop-blur-xl text-center text-nowrap truncate max-md:rounded-b-sm">{{item.name}}</div>
             </a>
             
         }
