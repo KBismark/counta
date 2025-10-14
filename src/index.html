@@ -15,11 +15,54 @@
     <app-root></app-root>
 
     <style>
+        p-button.p-carousel-prev-button {
+            z-index: 2;
+            position: absolute;
+            left: 8px;
+        }
+
+        p-button.p-carousel-next-button {
+            z-index: 2;
+            position: absolute;
+            right: 8px;
+        }
+
+        p-button.p-carousel-prev-button+* {
+            margin-left: 25px;
+        }
+
+
+        p-button.p-carousel-prev-button button,
+        p-button.p-carousel-next-button button {
+            background-color: #ffffff !important;
+            background: #ffffff !important;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            transform: scale(1.1);
+        }
+
+        p-button.p-carousel-prev-button.p-disabled,
+        p-button.p-carousel-next-button.p-disabled {
+            display: none !important;
+        }
+
+        @media screen and (max-width: 913px) {
+
+            p-button.p-carousel-prev-button+* {
+                margin-left: 0px;
+            }
+
+            .patch-carousel-margin p-button.p-carousel-prev-button+* {
+                margin-left: 25px;
+            }
+        }
         @media screen and (max-width: 577px) {
 
-            p-button.p-carousel-prev-button,
-            p-button.p-carousel-next-button {
-                display: none !important;
+            p-button.p-carousel-prev-button+* {
+                margin-left: 0px;
+            }
+
+            .patch-carousel-margin p-button.p-carousel-prev-button+* {
+                margin-left: 0px;
             }
         }
     </style>

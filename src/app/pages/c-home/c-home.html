@@ -20,7 +20,7 @@
     </p-carousel>
 </div>
 
-<p-carousel class="-mt-16 hidden! md:block!" [value]="homeSection.items" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
+<p-carousel class="-mt-16 hidden! md:block! patch-carousel-margin" [value]="homeSection.items" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
     [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
     <ng-template let-group #item>
         <div

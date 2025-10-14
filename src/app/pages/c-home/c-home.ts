@@ -11,7 +11,7 @@ import { ScrollableSection } from "./components/scrollable-section/scrollable-se
 
 @Component({
   selector: 'app-c-home',
-  imports: [Header, ScreenContainer, Carousel, CategoryCard, TypographyDirective, ButtonDirective, InvertedCornerSection, ScrollableSection],
+  imports: [Header, ScreenContainer, Carousel, InvertedCornerSection, ScrollableSection],
   templateUrl: './c-home.html',
   styleUrl: './c-home.css'
 })
@@ -72,11 +72,11 @@ export class CHome {
         numVisible: 3,
         numScroll: 2
     },
-    {
-        breakpoint: '768px',
-        numVisible: 2,
-        numScroll: 2
-    },
+    // {
+    //     breakpoint: '768px',
+    //     numVisible: 2,
+    //     numScroll: 2
+    // },
     {
         breakpoint: '560px',
         numVisible: 2,
