@@ -10,5 +10,5 @@ import { Popover } from "primeng/popover";
 })
 export class Header {
   protected expolorerItems = [{ label: 'Update', icon: 'pi pi-refresh' }, { label: 'Delete', icon: 'pi pi-times' }, { label: 'Angular.io', icon: 'pi pi-info', url: 'http://angular.io' }, { separator: true }, { label: 'Setup', icon: 'pi pi-cog' }];
-  protected isAuthenticated = signal(true);
+  protected isAuthenticated = signal(false);
 }

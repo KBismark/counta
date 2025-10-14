@@ -12,9 +12,10 @@ import { HomeSectionType } from '@/interfaces/sections';
 })
 export class InvertedCornerSection{
   public colorClass = input<string>('');
-  public title = input<string>('');
+  public _title = input<string>('');
   public invertedCorner = input<'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'>('top-right');
   public data = input.required<HomeSectionType>()
+  protected items = computed(()=>this.data().items.slice(0,6));
 
   protected classNames = computed(() => {
     switch (this.invertedCorner()) {

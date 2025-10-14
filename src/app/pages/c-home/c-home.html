@@ -20,99 +20,31 @@
     </p-carousel>
 </div>
 
-
-
-
-<screen-container>
-
-    <p-carousel class="-mt-16" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
+<p-carousel class="-mt-16" [value]="homeSection.items" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
         [showIndicators]="!false" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
-        <ng-template let-product #item>
+        <ng-template let-group #item>
             <div
-                class="group w-[300px] h-[320px] max-sm:w-[240px] max-md:w-[260px] max-lg:w-[220px] max-sm:h-[260px] max-md:h-[260px] max-lg:h-[260px] flex flex-col justify-center items-center overflow-hidden bg-white rounded-sm p-4 max-lg:mr-4 lg:ml-4 ">
+                class="group w-[300px] h-[320px] max-sm:w-[240px] max-md:w-[260px] max-lg:w-[220px] max-sm:h-[260px] max-md:h-[260px] max-lg:h-[260px] flex flex-col justify-center items-center overflow-hidden bg-white rounded-sm p-0.5 max-lg:mr-4 lg:ml-4 ">
                 <div
-                    class="group-hover:lg:scale-95 cursor-pointer h-full w-full bg-neutral-100 flex flex-col justify-center items-center overflow-hidden transition-transform duration-200">
-                    <!-- <div class="w-full ">
-        
-                        </div> -->
+                    class="group-hover:lg:scale-105 cursor-pointer h-full w-full bg-neutral-100 flex flex-col justify-center items-center overflow-hidden transition-transform duration-200">
+                    <img [src]="group.profileImage?.[0]" [alt]="group.name" class="size-full object-cover block " />
                 </div>
             </div>
         </ng-template>
     </p-carousel>
 
-    <inverted-corner-section class="block" title="Explore Electronics" colorClass="bg-amber-300"
+
+<screen-container>
+
+    
+
+    <inverted-corner-section class="block" _title="Explore Electronics" colorClass="bg-amber-300"
         invertedCorner="top-right" [data]="homeSection" />
-    <inverted-corner-section class="block" title="Explore Local Foods" colorClass="bg-emerald-300"
+    <inverted-corner-section class="block" _title="Explore Local Foods" colorClass="bg-emerald-300"
         invertedCorner="bottom-left" [data]="homeSection" />
-
-    <section class="w-full space-y-4 flex flex-col pt-8 bg-white">
-        <header class="mx-4 flex  justify-between items-center gap-3 flex-wrap">
-            <h2 style="margin: 0; padding: 0;" typo="h1">Buy At Your Own Price, Place Your Bid</h2>
-            <div class="flex justify-center items-center md:mt-3">
-                <button typo="button" pButton rounded>
-                    <span typo="button-text" pButtonLabel>Explore</span>
-                    <i class="pi pi-arrow-right mt-1" style="font-size: 10px;" pButtonIcon></i>
-                </button>
-            </div>
-        </header>
-        <div class="md:px-2 pt-4 pb-2  space-y-4">
-            <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
-                [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
-                <ng-template let-product #item>
-                    <category-card [data]="homeSection.items[1]" className="max-sm:mx-2 block border border-neutral-100 p-0!" />
-                </ng-template>
-            </p-carousel>
-        </div>
-
-    </section>
-
-    <section class="w-full space-y-4 flex flex-col pt-8 bg-rose-300">
-        <header class="mx-4 flex  justify-between items-center gap-3 flex-wrap">
-            <h2 style="margin: 0; padding: 0;" typo="h1">Touch Product Before Purchase</h2>
-            <div class="flex justify-center items-center md:mt-3">
-                <button typo="button" pButton rounded>
-                    <span typo="button-text" pButtonLabel>Explore</span>
-                    <i class="pi pi-arrow-right mt-1" style="font-size: 10px;" pButtonIcon></i>
-                </button>
-            </div>
-        </header>
-        <div class="bg-rose-500 md:px-2 pt-4 pb-2  space-y-4">
-            <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
-                [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
-                <ng-template let-product #item>
-                    <category-card [data]="homeSection.items[0]" className="max-sm:mx-2" />
-                </ng-template>
-            </p-carousel>
-            <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
-                [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
-                <ng-template let-product #item>
-                    <category-card [data]="homeSection.items[1]" className="max-sm:mx-2" />
-                </ng-template>
-            </p-carousel>
-        </div>
-
-    </section>
-
-    <section class="w-full space-y-4 flex flex-col pt-8 bg-white">
-        <header class="mx-4 flex  justify-between items-center gap-3 flex-wrap">
-            <h2 style="margin: 0; padding: 0;" typo="h1">Buy At Your Own Price, Place Your Bid</h2>
-            <div class="flex justify-center items-center md:mt-3">
-                <button typo="button" pButton rounded>
-                    <span typo="button-text" pButtonLabel>Explore</span>
-                    <i class="pi pi-arrow-right mt-1" style="font-size: 10px;" pButtonIcon></i>
-                </button>
-            </div>
-        </header>
-        <div class="md:px-2 pt-4 pb-2  space-y-4">
-            <p-carousel class="" [value]="heroCarouselItems" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
-                [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
-                <ng-template let-product #item>
-                    <category-card [data]="homeSection.items[0]" className="max-sm:mx-2 block border border-neutral-100 p-0!" />
-                </ng-template>
-            </p-carousel>
-        </div>
-
-    </section>
+    <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
+    <scrollable-section class="block" [data]="homeSection" _title="Touch Product Before Purchase" [numberOfSections]="2" className="bg-rose-300!" colorClass="bg-rose-500" />
+    <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
 
 
 </screen-container>

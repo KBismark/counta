@@ -13,7 +13,6 @@ export class CategoryCard {
     public data = input.required<CategoryCardType>();
     protected items = computed(()=>this.data().items.slice(0,5));
     protected sectionGridStyle = computed(() => {
-      console.log(this.data());
       
       const length = this.data().items.length;
       if (length === 1) {

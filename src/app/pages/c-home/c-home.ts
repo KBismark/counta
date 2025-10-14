@@ -7,10 +7,11 @@ import { TypographyDirective } from "@/core/typography";
 import { ButtonDirective } from "primeng/button";
 import { InvertedCornerSection } from "./components/inverted-corner-section/inverted-corner-section";
 import { mockedHomeSection, sneakersSection } from './data/section.mocked';
+import { ScrollableSection } from "./components/scrollable-section/scrollable-section";
 
 @Component({
   selector: 'app-c-home',
-  imports: [Header, ScreenContainer, Carousel, CategoryCard, TypographyDirective, ButtonDirective, InvertedCornerSection],
+  imports: [Header, ScreenContainer, Carousel, CategoryCard, TypographyDirective, ButtonDirective, InvertedCornerSection, ScrollableSection],
   templateUrl: './c-home.html',
   styleUrl: './c-home.css'
 })
