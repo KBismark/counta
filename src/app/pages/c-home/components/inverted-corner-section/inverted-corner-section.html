@@ -6,10 +6,11 @@
                 <header class="flex  justify-between items-center gap-3 flex-wrap">
                     <h2 style="margin: 0; padding: 0;" typo="h1">{{_title()}}</h2>
                     <div class="flex justify-center items-center md:mt-3">
-                        <button typo="button" pButton rounded >
+                        @let link = ['/view-products', slug(), data().shortDescription | slice:0:60 | slugify, data().groupId];
+                        <a [routerLink]="link" [queryParams]="{ ct_ref: crypto.signLink(link)}" typo="button" pButton rounded >
                             <span typo="button-text" pButtonLabel>Explore</span>
                             <i class="pi pi-arrow-right mt-1" style="font-size: 10px;" pButtonIcon></i>
-                        </button>
+                        </a>
                     </div>
                 </header>
                 <div
@@ -29,7 +30,8 @@
                 </div>
                 <category-card [data]="item" />
                 <div class="mx-1 mt-1 mb-2">
-                    <a href="#" typo="md" class="text-blue-400 ax-md:text-sm!" >See more in {{data().name}}</a>
+                    @let link = ['/view-products', slug(), item.name | slugify, item.shortDescription | slice:0:60 | slugify, item.groupId];
+                    <a [routerLink]="link" [queryParams]="{ ct_ref: crypto.signLink(link)}" typo="md" class="text-blue-400 ax-md:text-sm!" >See more in {{item.name}}</a>
                 </div>
             </div>
         }

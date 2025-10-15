@@ -1,69 +1,71 @@
-<app-header />
+<page-layout>
+    <main>
+        <div>
+            <p-carousel [value]="heroCarouselItems.slice(0,3)" [numVisible]="1" [numScroll]="1" [showNavigators]="false"
+                [showIndicators]="!true" [autoplayInterval]="3000" [circular]="true">
+                <ng-template let-product #item>
+                    <div style="background-color: {{product.color}}"
+                        class="w-full h-[420px] flex justify-between flex-wrap overflow-hidden">
+                        <div class="{{product.index!==0?'max-sm:hidden':''}}"></div>
+                        <div
+                            class="h-full {{product.index!==0?'max-sm:w-full':''}} flex flex-col justify-center items-center overflow-hidden">
+                            <div
+                                class="shape {{product.class}} max-xs:w-[300px] max-xs:ml-2.5 w-[350px] lg:w-[500px] xl:w-[600px] h-[360px] bg-amber-900">
 
-<div>
-    <p-carousel [value]="heroCarouselItems.slice(0,3)" [numVisible]="1" [numScroll]="1" [showNavigators]="false"
-        [showIndicators]="!true" [autoplayInterval]="3000" [circular]="true">
-        <ng-template let-product #item>
-            <div style="background-color: {{product.color}}"
-                class="w-full h-[420px] flex justify-between flex-wrap overflow-hidden">
-                <div class="{{product.index!==0?'max-sm:hidden':''}}"></div>
-                <div class="h-full {{product.index!==0?'max-sm:w-full':''}} flex flex-col justify-center items-center overflow-hidden">
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div>
+
+        <p-carousel class="-mt-10 hidden! md:block! patch-carousel-margin mb-8" [value]="homeSection.items"
+            [numVisible]="5" [numScroll]="3" [showNavigators]="true" [showIndicators]="true"
+            [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
+            <ng-template let-group #item>
+                <div
+                    class="group w-[300px] h-[320px] max-sm:w-[240px] max-md:w-[260px] max-lg:w-[220px] max-sm:h-[260px] max-md:h-[260px] max-lg:h-[260px] flex flex-col justify-center items-center overflow-hidden bg-white rounded-sm p-0.5 max-lg:mr-4 lg:ml-4 ">
                     <div
-                        class="shape {{product.class}} max-xs:w-[300px] max-xs:ml-2.5 w-[350px] lg:w-[500px] xl:w-[600px] h-[360px] bg-amber-900">
-
+                        class="group-hover:lg:scale-105 cursor-pointer h-full w-full bg-neutral-100 flex flex-col justify-center items-center overflow-hidden transition-transform duration-200">
+                        <img [src]="group.profileImage?.[0]" [alt]="group.name" class="size-full object-cover block " />
                     </div>
                 </div>
-            </div>
-        </ng-template>
-    </p-carousel>
-</div>
-
-<p-carousel class="-mt-10 hidden! md:block! patch-carousel-margin mb-8" [value]="homeSection.items" [numVisible]="5" [numScroll]="3" [showNavigators]="true"
-    [showIndicators]="true" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
-    <ng-template let-group #item>
-        <div
-            class="group w-[300px] h-[320px] max-sm:w-[240px] max-md:w-[260px] max-lg:w-[220px] max-sm:h-[260px] max-md:h-[260px] max-lg:h-[260px] flex flex-col justify-center items-center overflow-hidden bg-white rounded-sm p-0.5 max-lg:mr-4 lg:ml-4 ">
-            <div
-                class="group-hover:lg:scale-105 cursor-pointer h-full w-full bg-neutral-100 flex flex-col justify-center items-center overflow-hidden transition-transform duration-200">
-                <img [src]="group.profileImage?.[0]" [alt]="group.name" class="size-full object-cover block " />
-            </div>
-        </div>
-    </ng-template>
-</p-carousel>
+            </ng-template>
+        </p-carousel>
 
 
-<screen-container>
+        <screen-container>
 
-    <p-carousel class="-mt-16 block! md:hidden!" [value]="homeSection.items" [numVisible]="4" [numScroll]="3" [showNavigators]="true"
-    [showIndicators]="!false" [responsiveOptions]="carouselResponsiveOptions" [circular]="true">
-    <ng-template let-group #item>
-        <div
-            class="group w-[300px] h-[320px] max-sm:w-[240px] max-md:w-[260px] max-lg:w-[220px] max-sm:h-[260px] max-md:h-[260px] max-lg:h-[260px] flex flex-col justify-center items-center overflow-hidden bg-white rounded-sm p-0.5 max-lg:mr-4 lg:ml-4 ">
-            <div
-                class="group-hover:lg:scale-105 cursor-pointer h-full w-full bg-neutral-100 flex flex-col justify-center items-center overflow-hidden transition-transform duration-200">
-                <img [src]="group.profileImage?.[0]" [alt]="group.name" class="size-full object-cover block " />
-            </div>
-        </div>
-    </ng-template>
-</p-carousel>
-
-
-    <inverted-corner-section class="block mb-20" _title="Explore Electronics" colorClass="bg-amber-300"
-        invertedCorner="top-right" [data]="homeSection" />
-    <inverted-corner-section class="block" _title="Explore Local Foods" colorClass="bg-emerald-300"
-        invertedCorner="bottom-left" [data]="homeSection" />
-    <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
-    <scrollable-section class="block" [data]="homeSection" _title="Touch Product Before Purchase" [numberOfSections]="2"
-        className="bg-rose-300!" colorClass="bg-rose-500" />
-    <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
-
-    <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" [numberOfSections]="2" />
-    <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
+            <p-carousel class="-mt-16 block! md:hidden!" [value]="homeSection.items" [numVisible]="4" [numScroll]="3"
+                [showNavigators]="true" [showIndicators]="!false" [responsiveOptions]="carouselResponsiveOptions"
+                [circular]="true">
+                <ng-template let-group #item>
+                    <div
+                        class="group w-[300px] h-[320px] max-sm:w-[240px] max-md:w-[260px] max-lg:w-[220px] max-sm:h-[260px] max-md:h-[260px] max-lg:h-[260px] flex flex-col justify-center items-center overflow-hidden bg-white rounded-sm p-0.5 max-lg:mr-4 lg:ml-4 ">
+                        <div
+                            class="group-hover:lg:scale-105 cursor-pointer h-full w-full bg-neutral-100 flex flex-col justify-center items-center overflow-hidden transition-transform duration-200">
+                            <img [src]="group.profileImage?.[0]" [alt]="group.name"
+                                class="size-full object-cover block " />
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
 
 
-</screen-container>
+            <inverted-corner-section class="block mb-20" _title="Explore Electronics" colorClass="bg-amber-300"
+                invertedCorner="top-right" [data]="homeSection" />
+            <inverted-corner-section class="block" _title="Explore Local Foods" colorClass="bg-emerald-300"
+                invertedCorner="bottom-left" [data]="homeSection" />
+            <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
+            <scrollable-section class="block" [data]="homeSection" _title="Touch Product Before Purchase"
+                [numberOfSections]="2" className="bg-rose-300!" colorClass="bg-rose-500" />
+            <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
+
+            <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid"
+                [numberOfSections]="2" />
+            <scrollable-section class="block" [data]="homeSection" _title="Buy At Your Own Price, Place Your Bid" />
 
 
-<footer class="bg-primary-500/80 backdrop-blur-md h-[400px]">
-
-</footer>
+        </screen-container>
+    </main>
+</page-layout>

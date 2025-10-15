@@ -1,17 +1,14 @@
 import { Component } from '@angular/core';
-import { Header } from './components/header/header';
 import { ScreenContainer } from "@/layout/component/container.layout";
 import { Carousel } from "primeng/carousel";
-import { CategoryCard } from "./components/category-card/category-card";
-import { TypographyDirective } from "@/core/typography";
-import { ButtonDirective } from "primeng/button";
 import { InvertedCornerSection } from "./components/inverted-corner-section/inverted-corner-section";
 import { mockedHomeSection, sneakersSection } from './data/section.mocked';
 import { ScrollableSection } from "./components/scrollable-section/scrollable-section";
+import { PageLayout } from "@/layout/component/page.layout";
 
 @Component({
   selector: 'app-c-home',
-  imports: [Header, ScreenContainer, Carousel, InvertedCornerSection, ScrollableSection],
+  imports: [ScreenContainer, Carousel, InvertedCornerSection, ScrollableSection, PageLayout],
   templateUrl: './c-home.html',
   styleUrl: './c-home.css'
 })
