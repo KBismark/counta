@@ -5,8 +5,7 @@
             <p-carousel [value]="heroCarouselItems.slice(0,3)" [numVisible]="1" [numScroll]="1" [showNavigators]="false"
                 [showIndicators]="!true" [circular]="false">
                 <ng-template let-product #item>
-                    <div 
-                        class="w-full h-[420px] flex justify-between flex-wrap overflow-hidden bg-primary">
+                    <div class="w-full h-[420px] flex justify-between flex-wrap overflow-hidden bg-primary">
                         <div class="{{product.index!==0?'max-sm:hidden':''}}"></div>
                         <div
                             class="h-full {{product.index!==0?'max-sm:w-full':''}} flex flex-col justify-center items-center overflow-hidden">
@@ -21,9 +20,11 @@
         </div>
 
 
-        <div [ngClass]="{'max-md:z-50': hideFilterPanelOnMobile()}" class="col-span-4 max-lg:col-span-2 flex justify-between top-16 sticky bg-white max-m:scale-105 max-md:px-3.5 max-md:py-2">
+        <div [ngClass]="{'max-md:z-50': hideFilterPanelOnMobile()}"
+            class="col-span-4 max-lg:col-span-2 flex justify-between top-16 sticky bg-white max-m:scale-105 max-md:px-3.5 max-md:py-2">
             <div class="hidden max-md:block">
-                <button aria-label="Close filter panel" class="bg-transparent!" typo="button" pButton outlined severity="secondary" (click)="hideFilterPanelOnMobile.set(false)" >
+                <button aria-label="Close filter panel" class="bg-transparent!" typo="button" pButton outlined
+                    severity="secondary" (click)="hideFilterPanelOnMobile.set(false)">
                     <i class="pi pi-filter" style="font-size: 12px;" pButtonIcon></i>
                     <span typo="button-text" pButtonLabel>Filter</span>
                 </button>
@@ -32,11 +33,13 @@
         </div>
         <screen-container>
 
-            <section class="grid grid-cols-5 max-md:grid-cols-1 max-lg:grid-cols-3 gap-4 max-md:flex max-md:flex-col max-md:items-center">
+            <section
+                class="grid grid-cols-5 max-md:grid-cols-1 max-lg:grid-cols-3 gap-4 max-md:flex max-md:flex-col max-md:items-center">
 
 
                 <div class="group space-y-6 gap-2 flex flex-col max-md:w-full px-4 ">
-                    <app-c-filter [filters]="filters" [hiddenOnMobile]="hideFilterPanelOnMobile()" (onCloseFilterPanel)="hideFilterPanelOnMobile.set(true)" />
+                    <app-c-filter [filters]="filters" [hiddenOnMobile]="hideFilterPanelOnMobile()"
+                        (onCloseFilterPanel)="hideFilterPanelOnMobile.set(true)" />
                 </div>
 
                 <div class="col-span-4 max-lg:col-span-2">
@@ -52,26 +55,44 @@
                             <div></div>
                         </div> -->
                         @for (item of mockedProducts.items; track item.groupId) {
-                        <div class="border border-neutral-100 shadow-sm">
-                            
+                        <div class="border border-neutral-100 shadow-sm font-lato">
+
                             <div class="bg-neutral-100 w-full aspect-square">
-                                <img [src]="item.profileImage?.[0]" [alt]="item.name" class="size-full object-cover block " />
+                                <img [src]="item.profileImage?.[0]" [alt]="item.name"
+                                    class="size-full object-cover block " />
                             </div>
-                            <div class="mx-2 mt-1 mb-2">
-                                @let link = ['/view-products', slug(), item.name | slugify, item.shortDescription |
-                                slice:0:60 | slugify, item.groupId];
-                                <a truncateFade [routerLink]="link" [queryParams]="{ ct_ref: crypto.signLink(link)}" style="font-size: 16px;" typo="md"
-                                    
-                                    class="hover:text-rose-400 font-medium text-primary font-lato">
-                                    3 Pack Mens Athletic Sweatpants with Zipper Pockets,Workout Gym Joggers Pants for Men Running Jogging Pants | Sweatpants with Zipper Pockets,Workout Gym Joggers Pants
-                                </a>
+                            <div class="mx-2">
+                                <div class="mt-1 mb-2">
+                                    @let link = ['/view-products', slug(), item.name | slugify, item.shortDescription |
+                                    slice:0:60 | slugify, item.groupId];
+                                    <a truncateFade [routerLink]="link" [queryParams]="{ ct_ref: crypto.signLink(link)}"
+                                        style="font-size: 16px;" typo="md"
+                                        class="hover:text-rose-400 font-medium text-primary font-lato">
+                                        3 Pack Mens Athletic Sweatpants with Zipper Pockets,Workout Gym Joggers Pants
+                                        for Men Running Jogging Pants | Sweatpants with Zipper Pockets,Workout Gym
+                                        Joggers Pants
+                                    </a>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="flex gap-1">
+                                        <span class="self-baseline mt-2 max-md:mt-1">
+                                            <sub class="font-poppin font-semibold">GHS</sub>
+                                        </span>
+                                        <span class="flex gap-1">
+                                            <span typo="h3" class="font-poppin">252</span>
+                                            <span class="sr-only">.</span>
+                                            <sub class="font-poppin font-semibold">67</sub>
+                                        </span>
+                                    </span>
+                                    <span class="line-through italic font-medium text-primary-400 font-poppin">GHS 257</span>
+                                </div>
                             </div>
                         </div>
                         }
                     </div>
                 </div>
 
-                
+
 
             </section>
 
