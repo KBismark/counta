@@ -2,14 +2,14 @@
 <div [ngClass]="{'max-md:hidden!': hiddenOnMobile()}" class="hidden max-md:block max-md:w-full max-md:fixed max-md:inset-0 max-md:bg-white/10 max-md:backdrop-blur-sm max-md:z-50"></div>
 <div 
 [ngClass]="{'max-md:scale-100! max-md:rounded-none!': opened(), 'max-md:hidden!': hiddenOnMobile()}"
-class="flex flex-col gap-4 max-md:w-full max-md:fixed max-md:inset-0 max-md:bg-white/90 max-md:z-50 max-md:overflow-y-auto transition-transform duration-500 max-md:scale-90 max-md:rounded-lg">
+class="flex flex-col gap-4 max-md:w-full max-md:fixed max-md:inset-0 max-md:bg-white max-md:z-50 max-md:overflow-y-auto transition-transform duration-500 max-md:scale-90 max-md:rounded-lg">
     <div class="md:hidden flex justify-between items-center top-0 sticky px-4 py-1 bg-white z-10">
         <button aria-label="Close filter panel" class="bg-transparent!" typo="button" pButton text rounded (click)="closeFilterPanel()" >
             <i class="pi pi-chevron-left -ml-4" style="font-size: 12px;" pButtonIcon></i>
             <span typo="button-text" class="hover:text-rose-400 hover:font-normal!" pButtonLabel>Go Back</span>
         </button>
         <button aria-label="Apply filters" typo="button" pButton rounded (click)="openFilterPanel()" >
-            <span typo="button-text" class="sr-onl" pButtonLabel>Apply</span>
+            <span typo="button-text" pButtonLabel>Apply</span>
             <!-- <i class="pi pi-check" style="font-size: 12px;" pButtonIcon></i> -->
         </button>
     </div>
@@ -23,7 +23,7 @@ class="flex flex-col gap-4 max-md:w-full max-md:fixed max-md:inset-0 max-md:bg-w
             @for (filter of item.filters.slice(0,5); track filter.filterId) {
             <li class="flex items-center list-none">
                 <p-checkbox [inputId]="filter.filterId" name="group" [value]="filter.name" />
-                <label typo="body" [for]="filter.filterId" class="px-2 cursor-pointer mt-0.5 hover:text-rose-400 transition-all duration-200">
+                <label style="font-size: 16px;" typo="body" [for]="filter.filterId" class="truncate text-nowrap px-2 max-md:text-lg! font-medium text-primary font-lato cursor-pointer mt-0.5 hover:text-rose-400 transition-all duration-200">
                     {{ filter.name }}
                 </label>
             </li>
