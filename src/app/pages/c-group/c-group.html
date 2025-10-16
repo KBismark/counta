@@ -75,16 +75,25 @@
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="flex gap-1">
-                                        <span class="self-baseline mt-2 max-md:mt-1">
-                                            <sub class="font-poppin font-semibold">GHS</sub>
+                                        <span class="self-baseline mt-0 pt-2 pl-2 max-md:pt-2 max-md:-mt-1 shape price-options-blob-shape size-10 bg-rose-500">
+                                            <sub class="font-poppin font-semibold text-white select-none">GHS</sub>
                                         </span>
                                         <span class="flex gap-1">
-                                            <span typo="h3" class="font-poppin">252</span>
+                                            <span typo="h3" class="font-poppin">610</span>
                                             <span class="sr-only">.</span>
                                             <sub class="font-poppin font-semibold">67</sub>
                                         </span>
                                     </span>
                                     <span class="line-through italic font-medium text-primary-400 font-poppin">GHS 257</span>
+                                </div>
+                                <div class="flex items-start gap-1">
+                                    <!-- <div class="shape price-options-blob-shape size-11"></div> -->
+                                    <i class="pi pi-chevron-right mt-2.5" style="font-size: 10px;" pButtonIcon></i>
+                                    <a [routerLink]="link" [queryParams]="{ ct_ref: crypto.signLink(link)}"
+                                        style="font-size: 16px;" typo="md"
+                                        class="hover:text-rose-400 font-medium text-primary font-lato">
+                                        See more price options
+                                    </a>
                                 </div>
                             </div>
                         </div>

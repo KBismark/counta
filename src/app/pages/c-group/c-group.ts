@@ -17,7 +17,7 @@ import { ButtonDirective } from 'primeng/button';
   imports: [PageLayout, Carousel, ScreenContainer, CFilter, TypographyDirective, RouterLink, SlugifyPipe, SlicePipe, TruncateFadeTextDirective, ButtonDirective, NgClass],
   providers: [SlugifyPipe],
   templateUrl: './c-group.html',
-  styleUrl: './c-group.scss',
+  styleUrl: './c-group.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CGroup {
