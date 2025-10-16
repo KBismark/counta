@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Header } from "@/pages/c-home/components/header/header";
+import { Header } from "@/shared/header/header";
 import { Footer } from '@/pages/c-home/components/footer/footer';
 
 @Component({

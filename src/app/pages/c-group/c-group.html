@@ -1,3 +1,73 @@
 <page-layout>
 
+    <main class="block bg-white">
+        <div>
+            <p-carousel [value]="heroCarouselItems.slice(0,3)" [numVisible]="1" [numScroll]="1" [showNavigators]="false"
+                [showIndicators]="!true" [circular]="true">
+                <ng-template let-product #item>
+                    <div 
+                        class="w-full h-[420px] flex justify-between flex-wrap overflow-hidden bg-primary">
+                        <div class="{{product.index!==0?'max-sm:hidden':''}}"></div>
+                        <div
+                            class="h-full {{product.index!==0?'max-sm:w-full':''}} flex flex-col justify-center items-center overflow-hidden">
+                            <div
+                                class="shape {{product.class}} max-xs:w-[300px] max-xs:ml-2.5 w-[350px] lg:w-[500px] xl:w-[600px] h-[360px] bg-amber-900">
+
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div>
+
+
+        <screen-container>
+
+            <section class="grid grid-cols-5 max-md:grid-cols-1 max-lg:grid-cols-3 gap-4 max-md:flex max-md:flex-col max-md:items-center">
+
+
+                <div class="group space-y-6 gap-2 flex flex-col max-md:w-full px-4 ">
+                    <app-c-filter [filters]="filters" [hiddenOnMobile]="hideFilterPanelOnMobile()" (onCloseFilterPanel)="hideFilterPanelOnMobile.set(true)" />
+                </div>
+
+                <div class="col-span-4 max-lg:col-span-2">
+                    <div
+                        class="grid grid-cols-4 gap-2 max-md:gap-2 max-md:space-y-1.5 space-y-4 max-lg:grid-cols-2 max-md:w-full">
+                        <div [ngClass]="{'max-md:z-50': hideFilterPanelOnMobile()}" class="col-span-4 max-lg:col-span-2 flex justify-between top-18 sticky bg-white max-md:scale-105 max-md:px-3.5 max-md:py-2">
+                            <div class="hidden max-md:block">
+                                <button aria-label="Close filter panel" class="bg-transparent!" typo="button" pButton outlined severity="secondary" (click)="hideFilterPanelOnMobile.set(false)" >
+                                    <i class="pi pi-filter" style="font-size: 12px;" pButtonIcon></i>
+                                    <span typo="button-text" pButtonLabel>Filter</span>
+                                </button>
+                            </div>
+                            <div></div>
+                        </div>
+                        @for (item of mockedProducts.items; track item.groupId) {
+                        <div class="border border-neutral-100 shadow-sm">
+                            
+                            <div class="bg-neutral-100 w-full aspect-square">
+                                <img [src]="item.profileImage?.[0]" [alt]="item.name" class="size-full object-cover block " />
+                            </div>
+                            <div class="mx-2 mt-1 mb-2">
+                                @let link = ['/view-products', slug(), item.name | slugify, item.shortDescription |
+                                slice:0:60 | slugify, item.groupId];
+                                <a truncateFade [routerLink]="link" [queryParams]="{ ct_ref: crypto.signLink(link)}" style="font-size: 16px;" typo="md"
+                                    
+                                    class="hover:text-rose-400 leaing-6! font-medium text-primary font-lato">
+                                    3 Pack Mens Athletic Sweatpants with Zipper Pockets,Workout Gym Joggers Pants for Men Running Jogging Pants | Sweatpants with Zipper Pockets,Workout Gym Joggers Pants
+                                </a>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+
+                
+
+            </section>
+
+        </screen-container>
+
+    </main>
+
 </page-layout>

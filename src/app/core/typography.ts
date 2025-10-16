@@ -1,28 +1,34 @@
 import { Directive, ElementRef, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
+type Heading = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
+type StrictHeading = `${Heading}!`;
+
+type Typography = StrictHeading | Heading | 'body' | 'body-lg' | 'body-sm' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'button' | 'button-text';
+
 @Directive({
   selector: '[typo]',
   standalone: true
 })
 export class TypographyDirective implements OnChanges, OnInit {
-  @Input('typo') typo: string = '';
+  @Input('typo') typo: Typography = 'body';
 
-  private previousTypo: string = '';
+  private previousTypo: Typography = 'body';
   private typographyMap: { [key: string]: string } = {
     // Headings
-    'h1': 'text-4xl font-bold leading-tight md:text-5xl',
-    'h2': 'text-3xl font-bold leading-tight md:text-4xl',
-    'h3': 'text-2xl font-bold leading-tight md:text-3xl',
-    'h4': 'text-xl font-bold leading-tight md:text-2xl',
-    'h5': 'text-lg font-bold leading-tight md:text-xl',
-    'h6': 'text-base font-bold leading-tight md:text-lg',
+    'h1': 'text-4xl font-bold leading-tight md:text-5xl font-poppins',
+    'h2': 'text-3xl font-bold leading-tight md:text-4xl font-poppins',
+    'h3': 'text-2xl font-bold leading-tight md:text-3xl font-poppins',
+    'h4': 'text-xl font-bold leading-tight md:text-2xl font-poppins',
+    'h5': 'text-lg font-bold leading-tight md:text-xl font-poppins',
+    'h6': 'text-base font-bold leading-tight md:text-lg font-poppins',
 
-    'h1!': 'text-4xl! font-bold! leading-tight! md:text-5xl!',
-    'h2!': 'text-3xl! font-bold! leading-tight! md:text-4xl!',
-    'h3!': 'text-2xl! font-bold! leading-tight! md:text-3xl!',
-    'h4!': 'text-xl! font-bold! leading-tight! md:text-2xl!',
-    'h5!': 'text-lg! font-bold! leading-tight! md:text-xl!',
-    'h6!': 'text-base! font-bold! leading-tight! md:text-lg!',
+    'h1!': 'text-4xl! font-bold! leading-tight! md:text-5xl! font-poppins',
+    'h2!': 'text-3xl! font-bold! leading-tight! md:text-4xl! font-poppins',
+    'h3!': 'text-2xl! font-bold! leading-tight! md:text-3xl! font-poppins',
+    'h4!': 'text-xl! font-bold! leading-tight! md:text-2xl! font-poppins',
+    'h5!': 'text-lg! font-bold! leading-tight! md:text-xl! font-poppins',
+    'h6!': 'text-base! font-bold! leading-tight! md:text-lg! font-poppins',
 
     // Body text
     'body': 'text-base leading-relaxed',

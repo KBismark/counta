@@ -5,7 +5,7 @@ import { ButtonDirective} from "primeng/button";
 import { TypographyDirective } from "@/core/typography";
 import { HomeSectionType } from '@/interfaces/sections';
 import { RouterLink } from "@angular/router";
-import { DescriptionSlugifyPipe, SlugifyPipe } from '@/core/slugify-url-pipe';
+import { SlugifyPipe } from '@/core/slugify-url-pipe';
 import { Crypto } from '@/services/crypto';
 @Component({
   selector: 'inverted-corner-section',

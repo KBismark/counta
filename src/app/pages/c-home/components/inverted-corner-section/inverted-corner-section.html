@@ -1,13 +1,12 @@
 <section class="grid grid-cols-3 max-xl:grid-cols-1 gap-4 max-xl:flex {{['top-right','bottom-right'].includes(invertedCorner())?'max-xl:flex-col':'max-xl:flex-col-reverse'}} max-xl:items-center">
-   
+    @let sectionLink = ['/view-products', slug(), data().shortDescription | slice:0:60 | slugify, data().groupId];
     @if (['top-right','bottom-right'].includes(invertedCorner())) {
         <!-- <div> -->
             <div class="group space-y-6 gap-2 flex flex-col max-xl:w-full px-4 {{colorClass()}} {{classNames()}}" >
                 <header class="flex  justify-between items-center gap-3 flex-wrap">
                     <h2 style="margin: 0; padding: 0;" typo="h1">{{_title()}}</h2>
                     <div class="flex justify-center items-center md:mt-3">
-                        @let link = ['/view-products', slug(), data().shortDescription | slice:0:60 | slugify, data().groupId];
-                        <a [routerLink]="link" [queryParams]="{ ct_ref: crypto.signLink(link)}" typo="button" pButton rounded >
+                        <a [routerLink]="sectionLink" [queryParams]="{ ct_ref: crypto.signLink(sectionLink)}" typo="button" pButton rounded >
                             <span typo="button-text" pButtonLabel>Explore</span>
                             <i class="pi pi-arrow-right mt-1" style="font-size: 10px;" pButtonIcon></i>
                         </a>
@@ -31,7 +30,7 @@
                 <category-card [data]="item" />
                 <div class="mx-1 mt-1 mb-2">
                     @let link = ['/view-products', slug(), item.name | slugify, item.shortDescription | slice:0:60 | slugify, item.groupId];
-                    <a [routerLink]="link" [queryParams]="{ ct_ref: crypto.signLink(link)}" typo="md" class="text-blue-400 ax-md:text-sm!" >See more in {{item.name}}</a>
+                    <a [routerLink]="link" [queryParams]="{ ct_ref: crypto.signLink(link)}" typo="md" class="text-blue-400 max-md:text-sm!" >See more in {{item.name}}</a>
                 </div>
             </div>
         }
@@ -43,10 +42,10 @@
                 <header class="flex  justify-between items-center gap-3 flex-wrap">
                     <h2 style="margin: 0; padding: 0;" typo="h1">{{_title()}}</h2>
                     <div class="flex justify-center items-center md:mt-3">
-                        <button typo="button" pButton rounded >
+                        <a [routerLink]="sectionLink" [queryParams]="{ ct_ref: crypto.signLink(sectionLink)}" typo="button" pButton rounded >
                             <span typo="button-text" pButtonLabel>Explore</span>
                             <i class="pi pi-arrow-right mt-1" style="font-size: 10px;" pButtonIcon></i>
-                        </button>
+                        </a>
                     </div>
                 </header>
                 <div

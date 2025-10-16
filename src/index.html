@@ -13,10 +13,121 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <style>
-        body{
+        body {
             font-family: "Poppins", sans-serif !important;
             font-weight: 400;
             font-style: normal;
+        }
+
+        .font-poppins {
+            font-family: "Poppins", sans-serif !important;
+        }
+
+        .font-lato {
+            font-family: "Lato", sans-serif !important;
+        }
+
+        .font-alan {
+            font-family: "Alan Sans", sans-serif;
+            font-optical-sizing: auto;
+        }
+
+        .shape.slanted-shape {
+            --p: 60px;
+            /* control the shape (can be percentage) */
+            aspect-ratio: 1;
+            clip-path: polygon(0 var(--p), 100% 0, 100% 100%, 0 100%);
+        }
+
+        /* HTML: <div class="trapezoid"></div> */
+        .shape.trapezoid-shape {
+            --p: 50px;
+            /* control the shape (can be percentage) */
+            aspect-ratio: 2/3;
+            clip-path: polygon(0 var(--p), 0 calc(100% - var(--p)), 100% 100%, 100% 0);
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+
+        /* HTML: <div class="trapezoid"></div> */
+        .shape.trapezoid-down-shape {
+            --p: 100px;
+            /* control the shape (can be percentage) */
+            aspect-ratio: 3/2;
+            clip-path: polygon(var(--p) 100%, calc(100% - var(--p)) 100%, 100% 0, 0 0);
+        }
+
+        /* HTML: <div class="inner-curve"></div> */
+        .shape.inner-curve-shape {
+            --r: 20px;
+            /* control the rounded part */
+            --s: 40px;
+            /* control the size of the cut */
+            --a: 20deg;
+            /* control the depth of the curvature */
+            --p: 50%;
+            /* control the position */
+
+            aspect-ratio: 3/2;
+            background: #ED303C;
+            border-radius: var(--r);
+            --_m: var(--r), #000 calc(100% - 1px), #0000;
+            --_d: (var(--s) + var(--r))*cos(var(--a));
+            mask:
+                radial-gradient(var(--r) at calc(var(--p) + var(--_d)) var(--_m)),
+                radial-gradient(var(--r) at calc(var(--p) - var(--_d)) var(--_m)),
+                radial-gradient(var(--s) at var(--p) calc(-1*sin(var(--a))*var(--s)),
+                    #0000 100%, #000 calc(100% + 1px)) 0 calc(var(--r)*(1 - sin(var(--a)))) no-repeat,
+                linear-gradient(90deg, #000 calc(var(--p) - var(--_d)), #0000 0 calc(var(--p) + var(--_d)), #000 0);
+        }
+
+        /* HTML: <div class="inner-curve"></div> */
+        .shape.inner-curve-down-shape {
+            --r: 20px;
+            /* control the rounded part */
+            --s: 40px;
+            /* control the size of the cut */
+            --a: 20deg;
+            /* control the depth of the curvature */
+            --p: 50%;
+            /* control the position */
+
+            aspect-ratio: 3/2;
+            border-radius: var(--r);
+            --_m: calc(100% - var(--r)), #000 calc(100% - 1px), #0000;
+            --_d: (var(--s) + var(--r))*cos(var(--a));
+            mask:
+                radial-gradient(var(--r) at calc(var(--p) + var(--_d)) var(--_m)),
+                radial-gradient(var(--r) at calc(var(--p) - var(--_d)) var(--_m)),
+                radial-gradient(var(--s) at var(--p) calc(100% + sin(var(--a))*var(--s)),
+                    #0000 100%, #000 calc(100% + 1px)) 0 calc(var(--r)*(sin(var(--a)) - 1)) no-repeat,
+                linear-gradient(90deg, #000 calc(var(--p) - var(--_d)), #0000 0 calc(var(--p) + var(--_d)), #000 0);
+        }
+
+        /* HTML: <img class="squircle" src="" alt=""> */
+        .shape.squircle-shape {
+            aspect-ratio: 1;
+            border-radius: 50%;
+            corner-shape: squircle;
+        }
+
+
+        .truncate-4-lines-fade {
+            position: relative;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .truncate-4-lines-fade::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2em;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 90%);
         }
     </style>
 </head>
@@ -65,15 +176,24 @@
                 margin-left: 25px;
             }
         }
+
         @media screen and (max-width: 577px) {
 
             .patch-carousel-margin p-button.p-carousel-prev-button+* {
                 margin-left: 0px;
             }
         }
+
+        p-accordion-content.patch-p-accordion-content-padding>div,
+        p-accordion-content.patch-p-accordion-content-padding .p-accordioncontent-content,
+        .patch-p-accordion-content-padding>div {
+            padding: 0 !important;
+            background: transparent;
+        }
     </style>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans&display=swap" rel="stylesheet">
 </body>
 
 </html>

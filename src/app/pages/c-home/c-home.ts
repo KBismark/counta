@@ -48,11 +48,6 @@ export class CHome {
         numVisible: 3,
         numScroll: 2
     },
-    // {
-    //     breakpoint: '768px',
-    //     numVisible: 2,
-    //     numScroll: 2
-    // },
     {
         breakpoint: '560px',
         numVisible: 2,
