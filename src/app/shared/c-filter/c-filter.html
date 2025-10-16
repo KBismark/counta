@@ -2,7 +2,7 @@
 <div [ngClass]="{'max-md:hidden!': hiddenOnMobile()}" class="hidden max-md:block max-md:w-full max-md:fixed max-md:inset-0 max-md:bg-white/10 max-md:backdrop-blur-sm max-md:z-50"></div>
 <div 
 [ngClass]="{'max-md:scale-100! max-md:rounded-none!': opened(), 'max-md:hidden!': hiddenOnMobile()}"
-class="flex flex-col gap-4 max-md:w-full max-md:fixed max-md:inset-0 max-md:bg-white max-md:z-50 max-md:overflow-y-auto transition-transform duration-500 max-md:scale-90 max-md:rounded-lg">
+class="flex flex-col gap-4 max-md:w-full max-md:fixed max-md:inset-0 max-md:bg-white max-md:z-50 max-md:overflow-y-auto transition-transform duration-400 max-md:scale-90 max-md:rounded-lg">
     <div class="md:hidden flex justify-between items-center top-0 sticky px-4 py-1 bg-white z-10">
         <button aria-label="Close filter panel" class="bg-transparent!" typo="button" pButton text rounded (click)="closeFilterPanel()" >
             <i class="pi pi-chevron-left -ml-4" style="font-size: 12px;" pButtonIcon></i>
@@ -10,7 +10,6 @@ class="flex flex-col gap-4 max-md:w-full max-md:fixed max-md:inset-0 max-md:bg-w
         </button>
         <button aria-label="Apply filters" typo="button" pButton rounded (click)="openFilterPanel()" >
             <span typo="button-text" pButtonLabel>Apply</span>
-            <!-- <i class="pi pi-check" style="font-size: 12px;" pButtonIcon></i> -->
         </button>
     </div>
     @for (item of filters(); track item.groupId) {

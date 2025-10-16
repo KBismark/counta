@@ -21,6 +21,15 @@
         </div>
 
 
+        <div [ngClass]="{'max-md:z-50': hideFilterPanelOnMobile()}" class="col-span-4 max-lg:col-span-2 flex justify-between top-16 sticky bg-white max-m:scale-105 max-md:px-3.5 max-md:py-2">
+            <div class="hidden max-md:block">
+                <button aria-label="Close filter panel" class="bg-transparent!" typo="button" pButton outlined severity="secondary" (click)="hideFilterPanelOnMobile.set(false)" >
+                    <i class="pi pi-filter" style="font-size: 12px;" pButtonIcon></i>
+                    <span typo="button-text" pButtonLabel>Filter</span>
+                </button>
+            </div>
+            <div></div>
+        </div>
         <screen-container>
 
             <section class="grid grid-cols-5 max-md:grid-cols-1 max-lg:grid-cols-3 gap-4 max-md:flex max-md:flex-col max-md:items-center">
@@ -33,7 +42,7 @@
                 <div class="col-span-4 max-lg:col-span-2">
                     <div
                         class="grid grid-cols-4 gap-2 max-md:gap-2 max-md:space-y-1.5 space-y-4 max-lg:grid-cols-2 max-md:w-full">
-                        <div [ngClass]="{'max-md:z-50': hideFilterPanelOnMobile()}" class="col-span-4 max-lg:col-span-2 flex justify-between top-18 sticky bg-white max-md:scale-105 max-md:px-3.5 max-md:py-2">
+                        <!-- <div [ngClass]="{'max-md:z-50': hideFilterPanelOnMobile()}" class="col-span-4 max-lg:col-span-2 flex justify-between top-18 sticky bg-white max-m:scale-105 max-md:px-3.5 max-md:py-2">
                             <div class="hidden max-md:block">
                                 <button aria-label="Close filter panel" class="bg-transparent!" typo="button" pButton outlined severity="secondary" (click)="hideFilterPanelOnMobile.set(false)" >
                                     <i class="pi pi-filter" style="font-size: 12px;" pButtonIcon></i>
@@ -41,7 +50,7 @@
                                 </button>
                             </div>
                             <div></div>
-                        </div>
+                        </div> -->
                         @for (item of mockedProducts.items; track item.groupId) {
                         <div class="border border-neutral-100 shadow-sm">
                             
