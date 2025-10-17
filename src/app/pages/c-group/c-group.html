@@ -56,16 +56,19 @@
                         </div> -->
                         @for (item of mockedProducts.items; track item.groupId) {
                         <div class="border border-neutral-100 shadow-sm font-lato relative">
+                            @let link = ['/view-products', slug(), item.name | slugify, item.shortDescription |
+                            slice:0:60 | slugify, item.groupId];
+                            @let linkKey = crypto.signLink(link);
 
-                            <div class="bg-neutral-100 w-full aspect-square">
+                            <a [routerLink]="link" [queryParams]="{ ct_ref: linkKey}"
+                                class="bg-neutral-100 w-full aspect-square block">
                                 <img [src]="item.profileImage?.[0]" [alt]="item.name"
                                     class="size-full object-cover block " />
-                            </div>
+                            </a>
                             <div class="mx-2 mb-4">
                                 <div class="mt-1 mb-2">
-                                    @let link = ['/view-products', slug(), item.name | slugify, item.shortDescription |
-                                    slice:0:60 | slugify, item.groupId];
-                                    <a truncateFade [routerLink]="link" [queryParams]="{ ct_ref: crypto.signLink(link)}"
+
+                                    <a truncateFade [routerLink]="link" [queryParams]="{ ct_ref: linkKey}"
                                         style="font-size: 16px;" typo="md"
                                         class="hover:text-rose-400 font-medium text-primary font-lato">
                                         3 Pack Mens Athletic Sweatpants with Zipper Pockets,Workout Gym Joggers Pants
@@ -101,7 +104,7 @@
                                         <div pButton outlined class="text-nowrap mr-2 text-sm!">{{deal.name}}</div>
                                     </ng-template>
                                 </p-carousel>
-                                
+
                                 <div class="mb-2">
                                     <div class="flex items-start gap-1">
                                         <i class="pi pi-chevron-right mt-2.5" style="font-size: 10px;"></i>
@@ -128,7 +131,7 @@
                                     </button>
                                 </div>
 
-                                
+
                             </div>
                         </div>
                         }
