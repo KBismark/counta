@@ -3,7 +3,7 @@
     <main class="block bg-white">
         <div>
             <p-carousel [value]="heroCarouselItems.slice(0,3)" [numVisible]="1" [numScroll]="1" [showNavigators]="false"
-                [showIndicators]="!true" [circular]="false">
+                [showIndicators]="!true" [circular]="true">
                 <ng-template let-product #item>
                     <div class="w-full h-[420px] flex justify-between flex-wrap overflow-hidden bg-primary">
                         <div class="{{product.index!==0?'max-sm:hidden':''}}"></div>
@@ -55,13 +55,13 @@
                             <div></div>
                         </div> -->
                         @for (item of mockedProducts.items; track item.groupId) {
-                        <div class="border border-neutral-100 shadow-sm font-lato">
+                        <div class="border border-neutral-100 shadow-sm font-lato relative">
 
                             <div class="bg-neutral-100 w-full aspect-square">
                                 <img [src]="item.profileImage?.[0]" [alt]="item.name"
                                     class="size-full object-cover block " />
                             </div>
-                            <div class="mx-2">
+                            <div class="mx-2 mb-4">
                                 <div class="mt-1 mb-2">
                                     @let link = ['/view-products', slug(), item.name | slugify, item.shortDescription |
                                     slice:0:60 | slugify, item.groupId];
@@ -73,28 +73,62 @@
                                         Joggers Pants
                                     </a>
                                 </div>
-                                <div class="flex items-center gap-3">
+                                <div class="flex items-center gap-1 mb-3">
                                     <span class="flex gap-1">
-                                        <span class="self-baseline mt-0 pt-2 pl-2 max-md:pt-2 max-md:-mt-1 shape price-options-blob-shape size-10 bg-rose-500">
+                                        <span
+                                            class="self-baseline mt-0 pt-2 pl-2 max-md:pt-2 max-md:-mt-1 shape price-options-blob-shape size-10 bg-primary">
                                             <sub class="font-poppin font-semibold text-white select-none">GHS</sub>
                                         </span>
-                                        <span class="flex gap-1">
-                                            <span typo="h3" class="font-poppin">610</span>
+                                        <span class="flex gap-1 text-rose-500">
+                                            <span typo="h3" class="font-poppin select-none text-nowrap">689</span>
                                             <span class="sr-only">.</span>
-                                            <sub class="font-poppin font-semibold">67</sub>
+                                            <sub class="font-poppin font-semibold select-none">67</sub>
                                         </span>
+
+                                        <!-- <span class="font-poppin font-semibold select-none">-20%</span> -->
                                     </span>
-                                    <span class="line-through italic font-medium text-primary-400 font-poppin">GHS 257</span>
+                                    <span class="italic text-primary-400 font-poppin">
+                                        <span class="line-through font-semibold max-md:text-xs text-shadow-2xs ">GHS
+                                            2987</span>
+                                        <sup
+                                            class="font-poppin font-semibold select-none ml-2 max-md:text-xs text-rose-500 max-md:block max-md:mt-1">20%
+                                            OFF</sup>
+                                    </span>
                                 </div>
-                                <div class="flex items-start gap-1">
-                                    <!-- <div class="shape price-options-blob-shape size-11"></div> -->
-                                    <i class="pi pi-chevron-right mt-2.5" style="font-size: 10px;" pButtonIcon></i>
-                                    <a [routerLink]="link" [queryParams]="{ ct_ref: crypto.signLink(link)}"
-                                        style="font-size: 16px;" typo="md"
-                                        class="hover:text-rose-400 font-medium text-primary font-lato">
-                                        See more price options
-                                    </a>
+                                <p-carousel class="lg:-ml-6 mb-2" [value]="item.items" [numVisible]="2" [numScroll]="1"
+                                    [showNavigators]="!false" [showIndicators]="false">
+                                    <ng-template let-deal #item>
+                                        <div pButton outlined class="text-nowrap mr-2 text-sm!">{{deal.name}}</div>
+                                    </ng-template>
+                                </p-carousel>
+                                
+                                <div class="mb-2">
+                                    <div class="flex items-start gap-1">
+                                        <i class="pi pi-chevron-right mt-2.5" style="font-size: 10px;"></i>
+                                        <a [routerLink]="link" [queryParams]="{ ct_ref: crypto.signLink(link)}"
+                                            style="font-size: 16px;" typo="md"
+                                            class="hover:text-rose-400 font-medium text-primary font-lato">
+                                            See more price options
+                                        </a>
+                                    </div>
+                                    <div class="flex items-start gap-1">
+                                        <i class="pi pi-chevron-right mt-2.5" style="font-size: 10px;"></i>
+                                        <a [routerLink]="link" [queryParams]="{ ct_ref: crypto.signLink(link)}"
+                                            style="font-size: 16px;" typo="md"
+                                            class="hover:text-rose-400 font-medium text-primary font-lato">
+                                            <span class="sr-only">This item ships from Kumasi.</span>
+                                            See more items that ships from Kumasi.
+                                        </a>
+                                    </div>
                                 </div>
+
+                                <div class="mb-2">
+                                    <button typo="button" pButton rounded>
+                                        Add to cart
+                                    </button>
+                                </div>
+
+                                
                             </div>
                         </div>
                         }
